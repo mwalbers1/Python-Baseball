@@ -7,7 +7,7 @@ plays = games[games['type']=='play']
 #print(plays.head())
 
 # 2. Select all strike outs
-strike_outs = games[games['event'].str.contains('K')]
+strike_outs = plays[plays['event'].str.contains('K')]
 #print(strike_outs.head())
 
 # 3. Group by Year and Game
@@ -23,7 +23,7 @@ strike_outs = strike_outs.loc[:, ['year', 'strike_outs']].apply(pd.to_numeric)
 #print(strike_outs.head())
 
 # 6. Change plot formatting
-strike_outs.plot(x='year', y='strike_outs', kind='scatter').legend('Strike Outs')
+strike_outs.plot(x='year', y='strike_outs', kind='scatter').legend(['Strike Outs'])
 plt.xlabel('Year')
 plt.ylabel('Strike Outs')
 plt.show()
