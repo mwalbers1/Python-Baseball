@@ -5,7 +5,8 @@ from data import games
 #print(games.head())
 
 # 4. Select attendance
-attendance = games.loc[(games['type']=='info') & (games['multi2']=='attendance'), ['year', 'multi3']].reset_index(drop=True)
+#attendance = games.loc[(games['type']=='info') & (games['multi2']=='attendance'), ['year', 'multi3']].reset_index(drop=True)
+attendance = games.loc[(games['type'] == 'info') & (games['multi2'] == 'attendance'), ['year', 'multi3']]
 #print(attendance.head(25))
 
 # 5. Column labels
