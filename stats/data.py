@@ -30,7 +30,7 @@ identifiers = games['multi2'].str.extract(r'(.LS(\d{4})\d{5})')
 #print(games['multi2'].head(25))
 
 identifiers = identifiers.fillna(method='ffill')
-print(identifiers)
+#print(identifiers)
 
 # 11. Rename columns
 identifiers.columns = ['game_id', 'year']
@@ -46,10 +46,14 @@ games = games.fillna(' ')
 
 # 14. Categorical event type
 #print(set(games['type']))
+#print(set(games['type']))
+category_list = ['sub', 'start', 'data', 'id', 'play', 'com', 'info', 'version']
 
-games.loc[:, ['type']] = pd.Categorical(games.loc[:, ['type']])
-#print(games['type'].head(25))
+cat = pd.Categorical(games['type'], categories=category_list, ordered=False)
+games['type'] = cat
+
 #print(games.info())
+#print(set(games['type']))
 
 # 15. Print DataFrames
-print(games.head())
+#print(games.head())
