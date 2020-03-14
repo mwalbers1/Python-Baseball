@@ -17,7 +17,7 @@ games = pd.concat(game_frames)
 
 # 8. Clean values
 #print(games.info())
-games.loc[games['multi5']=='??', ['type', 'multi2', 'multi3', 'multi4', 'multi5', 'multi6', 'event']] = ''
+games.loc[games['multi5']=='??', ['multi5']] = ''
 
 #print(games.loc[games['multi5']=='??'].count()[0])
 
