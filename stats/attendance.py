@@ -9,7 +9,8 @@ attendance = games.loc[(games['type']=='info') & (games['multi2']=='attendance')
 #print(attendance.head(25))
 
 # 5. Column labels
-attendance.rename(columns={'multi3':'attendance'}, inplace=True)
+#attendance.rename(columns={'multi3':'attendance'}, inplace=True)
+attendance.columns = ['year', 'attendance']
 #print(attendance.info())
 
 # 6. Convert to numeric
