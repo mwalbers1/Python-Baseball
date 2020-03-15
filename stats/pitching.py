@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from data import games
 
+# "How have the number of strike outs changed over time?"
+
 # 1. Select all plays
 plays = games[games['type']=='play']
 #print(plays.head())

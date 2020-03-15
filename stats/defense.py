@@ -7,7 +7,7 @@ from frames import games, info, events
 
 # 2. Query function
 plays = games.query('type=="play" & event!="NP"')
-#print(plays.head(10))
+print(plays.head(10))
 
 # 3. column labels
 plays.columns = ['type', 'inning', 'team', 'player', 'count', 'pitches', 'event', 'game_id', 'year']
