@@ -30,7 +30,7 @@ hit_type = hits['event'].replace(replacements, regex=True)
 hits = hits.assign(hit_type=hit_type)
 #print(hits.head())
 
-# 7. Group by inning and hit hit_type
+# 7. Group by inning and hit_type
 hits = hits.groupby(['inning', 'hit_type']).size().reset_index(name='count')
 #print(hits.head(10))
 
@@ -44,7 +44,7 @@ hits = hits.sort_values(['inning', 'hit_type'])
 
 # 10. reshape with pivot
 hits = hits.pivot(index='inning', columns='hit_type', values='count')
-#print(hits.head())
+print(hits.head(25))
 
 # 11. stacked bar Plot
 hits.plot.bar(stacked=True)
