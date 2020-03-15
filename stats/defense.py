@@ -46,7 +46,7 @@ defense = pd.merge(events_plus_pa, info)
 
 # 11. Calculate DER
 defense.loc[:, 'DER'] = 1 - ((defense['H']+defense['ROE'])/(defense['PA'] - defense['BB'] - defense['SO'] - defense['HBP'] - defense['HR']))
-defense.loc[:, 'year'] = pd.to_numeric(defense.loc['year'])
+defense.loc[:, 'year'] = pd.to_numeric(defense.loc[:,'year'])
 #print(defense.head())
 
 # 12. Reshape with pivot
